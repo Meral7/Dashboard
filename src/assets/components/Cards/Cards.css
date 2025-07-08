@@ -1,0 +1,11 @@
+.Cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* عشان يكون Responsive */
+  gap: 20px;
+  justify-content: center;
+}
+
+.parentCard {
+  width: 300px;
+}

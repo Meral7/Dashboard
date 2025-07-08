@@ -1,0 +1,26 @@
+.CompactCard{
+    display: flex;
+    flex:1;
+    height: 7rem ;
+    width: 21rem;
+    border-radius: 0.75rem; ;
+    color: white;
+    cursor: pointer;
+    margin:2rem;
+}
+.radialBar {
+  padding: 10px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.CircularProgressbar {
+  width: 100%;
+  height: 100%;
+}
+.card{
+    display: inline-block;
+}
