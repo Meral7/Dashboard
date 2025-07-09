@@ -11,6 +11,7 @@ function App() {
 <div className="AppGlass">
  <Sidebar/>
  <MainDash/>
+  <Sidebar/>
 </div>
     </div>
   )
