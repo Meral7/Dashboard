@@ -8,23 +8,19 @@ import { UilTimes } from "@iconscout/react-unicons";
 import Chart from "react-apexcharts";
 import Tooltip from './../../../../node_modules/apexcharts/src/modules/tooltip/Tooltip';
 
-export default function Card(props) {
+export default function Card({ isExpanded, onExpand, onClose, ...props }) {
 
     const [expanded, setExpanded] = useState(false);
     return (
-        <div className='Card'>
-            <LayoutGroup>
-                {expanded ?
-                    (
-
-                        <ExpandedCard
-                            param={props} setExpanded={() => { setExpanded(false) }} />
-                    )
-                    :
-                    <CompactCard
-                        param={props} setExpanded={() => { setExpanded(true) }} />}
-            </LayoutGroup>
-        </div>
+        <div className="Card">
+      <LayoutGroup>
+        {isExpanded ? (
+          <ExpandedCard param={props} setExpanded={onClose} />
+        ) : (
+          <CompactCard param={props} setExpanded={onExpand} />
+        )}
+      </LayoutGroup>
+    </div>
     )
 }
 function CompactCard({ param, setExpanded }) {

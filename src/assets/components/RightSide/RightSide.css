@@ -1,0 +1,17 @@
+.RightSide {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  justify-content: space-evenly;
+  font-size: 13px;
+  
+}
+
+/* ✅ Mobile view adjustments */
+@media (max-width: 768px) {
+  .RightSide {
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+}

@@ -4,7 +4,7 @@ import Cards from '../Cards/Cards'
 import Table from '../Table/Table'
 export default function MainDash() {
   return (
-    <div className='MainDash flex'>
+    <div className='MainDash '>
       <Cards />
       
       <Table/>

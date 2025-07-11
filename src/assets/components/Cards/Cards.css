@@ -1,8 +1,41 @@
-.Cards {
+.cards {
+  position: relative;
   display: flex;
+  gap: 0.3rem;
+  /* flex-wrap: wrap; */
+  padding: 1rem;
+  
   
 }
+.parentCard {
+  
+  flex: 1; /* هذا يجعل كل كارد يأخذ جزءاً متساوياً من المساحة المتاحة (33.3% لكل واحد) */
+  min-width: 200px; /* (اختياري) حد أدنى للعرض لضمان عدم انكماش الكارد بشكل مبالغ فيه */
+} 
 .parentContainer{
   width: 100%;
 }
+.cardsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
+@media (max-width: 768px) {
+.cards {
+    position: relative;
+    display: flex
+;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    flex-direction: column;
+}
 
+  .parentCard {
+  
+    
+    width: 100%;
+    max-width: 100%;
+  }
+}
