@@ -1,12 +1,41 @@
-# React + Vite
+# 🧮 Responsive Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive and interactive admin dashboard built with **React**, **Vite**, **Framer Motion**, and **ApexCharts**. The dashboard displays analytics cards, charts, and a table of recent transactions.
 
-Currently, two official plugins are available:
+> 🌐 Live Demo: [https://Meral7.github.io/Dashboard](https://Meral7.github.io/Dashboard)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## 🚀 Features
+
+- 📊 Interactive cards with expand animation
+- 📈 Area charts using `react-apexcharts`
+- 📋 Table of recent orders (Material UI)
+- 🎨 Gradient color schemes and custom icons
+- 📱 Fully responsive on mobile and tablet screens
+- 🔄 Toggle sidebar menu for mobile view
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech              | Description                            |
+|-------------------|----------------------------------------|
+| React             | JavaScript library for UI              |
+| Vite              | Fast build tool and dev server         |
+| Framer Motion     | Animations and transitions             |
+| ApexCharts        | Charting library                       |
+| React Circular Progressbar | Circular indicators         |
+| Material UI       | Table components                       |
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/Meral7/Dashboard.git
+cd Dashboard
+npm install
+npm run dev
