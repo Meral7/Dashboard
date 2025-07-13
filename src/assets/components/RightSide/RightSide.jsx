@@ -1,7 +1,7 @@
 import React from 'react'
 import './RightSide.css'
 import Updates from '../Updates/Updates'
-import CustomerReview from '../CustomerReview/CustomerReview'
+import CustomerReview from '../../../CustomerReview/CustomerReview'
 export default function RightSide() {
   return (
     <div className='RightSide'>

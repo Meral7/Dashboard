@@ -1,56 +1,152 @@
-
-.logo>span>span{
-    color: var(--pink);
+/* Define CSS variables for light mode (default) */
+:root {
+  --sidebar-bg: white;
+  --sidebar-text: rgba(0, 0, 0, 0.87);
+  --sidebar-text-secondary: rgba(0, 0, 0, 0.6);
+  --sidebar-hover: rgba(0, 0, 0, 0.04);
+  --sidebar-active-bg: #ffe0e066;
+  --sidebar-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  --pink: #ff919d;
+  --activeItem: var(--sidebar-active-bg);
 }
-/* menu */
-/* .menu {
-  margin-top: 4rem;
+
+/* Dark mode variables */
+:root.dark-mode {
+  --sidebar-bg: #1e1e1e;
+  --sidebar-text: #fff;
+  --sidebar-text-secondary: rgba(255, 255, 255, 0.7);
+  --sidebar-hover: rgba(255, 255, 255, 0.08);
+  --sidebar-active-bg: rgba(255, 145, 157, 0.2);
+  --sidebar-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  --pink: #ff919d;
+  --activeItem: var(--sidebar-active-bg);
+}
+
+.Sidebar {
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  transition: background-color 0.3s ease, color 0.3s ease, left 0.3s ease-in-out;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-}*/
+}
+
+/* Logo styles */
+.logo {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--sidebar-text);
+  transition: color 0.3s ease;
+}
+
+.logo-accent {
+  color: var(--pink);
+}
+
+/* Menu styles */
+.menu {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1; /* This makes the menu container take up all available vertical space */
+  position: relative;
+  padding: 0 1rem;
+}
+
 .menuItem {
   display: flex;
   align-items: center;
   gap: 1rem;
   height: 2.5rem;
-  margin-left: 2rem;
+  padding: 0 1rem;
+  margin-left: 1rem;
   position: relative;
   transition: all 300ms ease;
   border-radius: 0.7rem;
   font-size: 14px;
   cursor: pointer;
-} 
- .active {
+  color: var(--sidebar-text);
+}
+
+.menuItem:hover {
+  background-color: var(--sidebar-hover);
+}
+
+.menuItem svg {
+  color: var(--sidebar-text);
+  transition: color 0.3s ease;
+}
+
+.active {
   background: var(--activeItem);
   margin-left: 0;
- }
- .active::before{
-    content: '';
-    height: 100%;
-    width: 0.5rem;  
-    background-color: var(--pink);
- }
- .menu .menuItem:last-child{
-   
-    position: absolute; 
-    bottom:2.3rem;
- }
+  color: var(--pink);
+}
+
+.active svg {
+  color: var(--pink);
+}
+
+.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0.5rem;
+  background-color: var(--pink);
+  border-radius: 0.7rem 0 0 0.7rem;
+}
+
+/* --- MODIFIED SECTION --- */
+/* This is the key change. By using margin-top: auto, we tell this flex item
+   to take up all available space above it, pushing it to the bottom of the
+   .menu container. We add margin-bottom for spacing. */
+.signout {
+  margin-top: auto;
+  margin-bottom: 2rem;
+}
+
+.signout:hover {
+  color: #ff4757;
+}
+
+.signout:hover svg {
+  color: #ff4757;
+}
+/* --- END OF MODIFIED SECTION --- */
+
+
+/* Mobile toggle icon (handled by App.js now) */
 .toggle-icon {
   display: none;
   position: fixed;
   top: 1rem;
   left: 1rem;
   z-index: 200;
-  background: white;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
   padding: 0.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  box-shadow: var(--sidebar-shadow);
+  transition: all 0.3s ease;
 }
-.logo{
-  padding: 2rem;
-}
+
 @media (max-width: 768px) {
   .toggle-icon {
     display: block;
@@ -63,15 +159,44 @@
     z-index: 150;
     height: 100vh;
     width: 65%;
-    background-color: white;
-    transition: left 0.3s ease-in-out;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   }
 
   .Sidebar.sidebar-mobile {
     left: 0;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
   }
 
+  /* This rule seems to be from another component (App.js), but leaving it as it was in your original file */
   .AppGlass {
     grid-template-columns: 1fr !important;
+  }
+
+  .logo {
+    padding: 1.5rem;
+  }
+
+  .menu {
+    padding: 0 0.5rem;
+  }
+
+  .menuItem {
+    margin-left: 0.5rem;
+    padding: 0 0.75rem;
+  }
+
+  .active {
+    margin-left: 0;
+  }
+}
+
+/* Dark mode specific enhancements */
+:root.dark-mode .Sidebar {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  :root.dark-mode .Sidebar.sidebar-mobile {
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5);
   }
 }

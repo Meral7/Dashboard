@@ -3,6 +3,7 @@ import './Sidebar.css'
 import logo from '../../../assets/images/logo.png';
 import {sidebarData} from '../../../data/data';
 import { UilSignOutAlt } from '@iconscout/react-unicons';
+
 export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const [active, setActive] = useState(0);
 
@@ -10,8 +11,10 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
     <div className={`Sidebar ${sidebarOpen ? 'sidebar-mobile' : ''}`}>
       {/* logo */}
       <div className="logo">
-        <img src={logo} alt="logo" className="w-[3rem] h-[3rem]" />
-        <span>sh<span>o</span>p</span>
+        <img src={logo} alt="logo" className="logo-img" />
+        <span className="logo-text">
+          sh<span className="logo-accent">o</span>p
+        </span>
       </div>
 
       {/* menu */}
@@ -30,7 +33,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </div>
         ))}
 
-        <div className="menuItem">
+        <div className="menuItem signout">
           <UilSignOutAlt />
           <span>Sign Out</span>
         </div>
@@ -38,4 +41,3 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
     </div>
   );
 }
-

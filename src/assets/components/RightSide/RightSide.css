@@ -1,7 +1,7 @@
 .RightSide {
   display: flex;
   flex-direction: column;
-  width: 98%;
+  width: 90%;
   justify-content: space-evenly;
   font-size: 13px;
   
@@ -11,7 +11,7 @@
 @media (max-width: 768px) {
   .RightSide {
     width: 100%;
-    padding: 0 1rem;
+    padding:2rem 1rem;
     box-sizing: border-box;
   }
 }

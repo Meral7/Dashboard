@@ -1,3 +1,49 @@
+/* Define CSS variables for light mode (default) */
+:root {
+  --table-bg: #fff;
+  --table-shadow: 0px 13px 20px 0px #80808029;
+  --text-primary: rgba(0, 0, 0, 0.87);
+  --text-secondary: rgba(0, 0, 0, 0.6);
+  --status-approved-bg: rgb(145 254 159 / 47%);
+  --status-approved-color: green;
+  --status-pending-bg: #ffadad8f;
+  --status-pending-color: red;
+  --status-delivered-bg: #59bfff;
+  --status-delivered-color: white;
+  --details-color: #00b5ff;
+}
+
+/* Dark mode variables */
+:root.dark-mode {
+  --table-bg: #1e1e1e;
+  --table-shadow: 0px 13px 20px 0px rgba(0, 0, 0, 0.5);
+  --text-primary: #fff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --status-approved-bg: rgba(46, 125, 50, 0.3);
+  --status-approved-color: #81c784;
+  --status-pending-bg: rgba(211, 47, 47, 0.3);
+  --status-pending-color: #ef5350;
+  --status-delivered-bg: rgba(25, 118, 210, 0.3);
+  --status-delivered-color: #90caf9;
+  --details-color: #64b5f6;
+}
+
+.Table h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.table-container {
+  background-color: var(--table-bg) !important;
+  box-shadow: var(--table-shadow) !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.MuiTableCell-root {
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2) !important;
+}
+
 .MuiTableRow-root > * {
   padding: 10px;
 }
@@ -14,30 +60,40 @@ th {
 .Table:first-child {
   border-radius: 0.7rem !important;
 }
+
 .status {
   padding: 8px;
   border-radius: 9px;
+  transition: all 0.3s ease;
 }
 
 .Details {
-  color: #00b5ff !important;
+  color: var(--details-color) !important;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.Details:hover {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 1200px) {
   .Table {
-    width:100%;
+    width: 100%;
     margin-top: 2rem;
   }
 }
 
-
 @media screen and (max-width: 768px) {
-  .Table{
-    width:100%;
+  .Table {
+    width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+  }
+  
+  .table-container {
+    width: 100%;
   }
 }
